@@ -1,0 +1,10 @@
+version: '2.4'
+
+services:
+  backend:
+    build: .
+    restart: always
+    ports:
+      - "1337:4444"
+    volumes:
+      - ./data:/data
