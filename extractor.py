@@ -29,7 +29,7 @@ if REDIS_STORAGE == 1:
             storage_set(file)
 else:
     for file in pwd_files:
-        f = open(file, 'rb')
+        f = open(d + '/' + file, 'rb')
         for line in f.readlines():
             try:
                 decode_line = line.decode()
