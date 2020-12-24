@@ -19,7 +19,7 @@ if REDIS_STORAGE == 1:
             for line in f.readlines():
                 try:
                     decode_line = line.decode()
-                    flags = re.findall("[A-Z0-9]{31}=", decode_line)
+                    flags = re.findall("^\w{31}=$", decode_line)
                     if flags:
                         for flag in flags:
                             print(flag, flush=True)
@@ -33,7 +33,7 @@ else:
         for line in f.readlines():
             try:
                 decode_line = line.decode()
-                flags = re.findall("[A-Z0-9]{31}=", decode_line)
+                flags = re.findall("^\w{31}=$", decode_line)
                 if flags:
                     for flag in flags:
                         print(flag, flush=True)
